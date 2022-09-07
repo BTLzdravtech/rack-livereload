@@ -687,14 +687,14 @@
                     return func();
                 };
                 clone.onload = function() {
-                    console.log("onload!");
+                    // console.log('LiveReload: the new stylesheet has finished loading');
                     _this.knownToSupportCssOnLoad = true;
                     return executeCallback();
                 };
                 if (!this.knownToSupportCssOnLoad) {
                     (poll = function() {
                         if (clone.sheet) {
-                            console.log("polling!");
+                            // console.log('LiveReload is polling until the new CSS finishes loading...');
                             return executeCallback();
                         } else {
                             return _this.Timer.start(50, poll);
